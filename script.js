@@ -66,6 +66,7 @@ function generateDocument(template, data) {
         AdditionalInformation: data.additionalInfo,
         IntellectualProperty: data.intellectualProperty, // New merge field
         DateOfContract: data.dateOfContract, // Auto-populated contract generation dat
+        TodaysDate: formatDate(new Date()),
       });
 
       try {
