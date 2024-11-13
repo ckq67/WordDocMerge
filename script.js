@@ -103,8 +103,10 @@ function generateDocument(template, data) {
 }
 
 // Helper function to format date from YYYY-MM-DD to dd/Month/yyyy
+// Helper function to format date from YYYY-MM-DD or Date object to dd/Month/yyyy
 function formatDate(inputDate) {
   const date = new Date(inputDate);
+  if (isNaN(date)) return ""; // Handle invalid dates gracefully
   const options = { day: "2-digit", month: "long", year: "numeric" };
   return date.toLocaleDateString("en-GB", options);
 }
